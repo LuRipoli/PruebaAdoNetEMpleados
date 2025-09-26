@@ -117,5 +117,15 @@ namespace PruebaAdoNetEMpleados
                 MessageBox.Show("Error al agregar el empleado: " + ex.Message);
             }
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        } //uy
+
+        private void dgvEmpleados_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }//uy X2
     }
 }

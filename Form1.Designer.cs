@@ -51,8 +51,32 @@
             label1 = new Label();
             dgvEmpleados = new DataGridView();
             btnSalir = new Button();
+            groupBox1 = new GroupBox();
+            btnModificarSecretaria = new Button();
+            txtModificarSecretaria = new TextBox();
+            label10 = new Label();
+            label11 = new Label();
+            label12 = new Label();
+            label13 = new Label();
+            btnCopiarDatosSecretaria = new Button();
+            btnEliminarSecretariaSeleccionada = new Button();
+            RefreshSecretarias = new Button();
+            btnAgregarSecretaria = new Button();
+            txtAgregarSecretariaFechaDeNacimiento = new TextBox();
+            txtAgregarSecretariaNacionalidad = new TextBox();
+            txtAgregarSecretariaNombre = new TextBox();
+            label14 = new Label();
+            label15 = new Label();
+            label16 = new Label();
+            label17 = new Label();
+            label18 = new Label();
+            dgvSecretarias = new DataGridView();
+            txtModificarSecretariaNacionalidad = new TextBox();
+            txtModificarSecretariaNacimiento = new TextBox();
             gbxEmpleados.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvEmpleados).BeginInit();
+            groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvSecretarias).BeginInit();
             SuspendLayout();
             // 
             // gbxEmpleados
@@ -266,12 +290,13 @@
             dgvEmpleados.RowHeadersWidth = 51;
             dgvEmpleados.Size = new Size(722, 353);
             dgvEmpleados.TabIndex = 1;
+            dgvEmpleados.CellContentClick += dgvEmpleados_CellContentClick;
             // 
             // btnSalir
             // 
             btnSalir.BackColor = Color.Red;
             btnSalir.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnSalir.Location = new Point(854, 454);
+            btnSalir.Location = new Point(1002, 383);
             btnSalir.Name = "btnSalir";
             btnSalir.Size = new Size(110, 29);
             btnSalir.TabIndex = 21;
@@ -279,18 +304,230 @@
             btnSalir.UseVisualStyleBackColor = false;
             btnSalir.Click += btnSalir_Click;
             // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(txtModificarSecretariaNacimiento);
+            groupBox1.Controls.Add(txtModificarSecretariaNacionalidad);
+            groupBox1.Controls.Add(btnModificarSecretaria);
+            groupBox1.Controls.Add(txtModificarSecretaria);
+            groupBox1.Controls.Add(label10);
+            groupBox1.Controls.Add(label11);
+            groupBox1.Controls.Add(label12);
+            groupBox1.Controls.Add(label13);
+            groupBox1.Controls.Add(btnCopiarDatosSecretaria);
+            groupBox1.Controls.Add(btnEliminarSecretariaSeleccionada);
+            groupBox1.Controls.Add(RefreshSecretarias);
+            groupBox1.Controls.Add(btnAgregarSecretaria);
+            groupBox1.Controls.Add(txtAgregarSecretariaFechaDeNacimiento);
+            groupBox1.Controls.Add(txtAgregarSecretariaNacionalidad);
+            groupBox1.Controls.Add(txtAgregarSecretariaNombre);
+            groupBox1.Controls.Add(label14);
+            groupBox1.Controls.Add(label15);
+            groupBox1.Controls.Add(label16);
+            groupBox1.Controls.Add(label17);
+            groupBox1.Controls.Add(label18);
+            groupBox1.Controls.Add(dgvSecretarias);
+            groupBox1.Location = new Point(12, 444);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(969, 426);
+            groupBox1.TabIndex = 22;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Secretarias";
+            // 
+            // btnModificarSecretaria
+            // 
+            btnModificarSecretaria.Location = new Point(757, 358);
+            btnModificarSecretaria.Name = "btnModificarSecretaria";
+            btnModificarSecretaria.Size = new Size(195, 29);
+            btnModificarSecretaria.TabIndex = 27;
+            btnModificarSecretaria.Text = "Agregar Secretaria";
+            btnModificarSecretaria.UseVisualStyleBackColor = true;
+            // 
+            // txtModificarSecretaria
+            // 
+            txtModificarSecretaria.Location = new Point(827, 256);
+            txtModificarSecretaria.Name = "txtModificarSecretaria";
+            txtModificarSecretaria.Size = new Size(125, 27);
+            txtModificarSecretaria.TabIndex = 26;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(757, 325);
+            label10.Name = "label10";
+            label10.Size = new Size(140, 20);
+            label10.TabIndex = 25;
+            label10.Text = "Año De Nacimiento";
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(757, 294);
+            label11.Name = "label11";
+            label11.Size = new Size(98, 20);
+            label11.TabIndex = 24;
+            label11.Text = "Nacionalidad";
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Location = new Point(757, 259);
+            label12.Name = "label12";
+            label12.Size = new Size(64, 20);
+            label12.TabIndex = 23;
+            label12.Text = "Nombre";
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Location = new Point(757, 220);
+            label13.Name = "label13";
+            label13.Size = new Size(143, 20);
+            label13.TabIndex = 22;
+            label13.Text = "Modificar Secretaria";
+            // 
+            // btnCopiarDatosSecretaria
+            // 
+            btnCopiarDatosSecretaria.Location = new Point(161, 19);
+            btnCopiarDatosSecretaria.Name = "btnCopiarDatosSecretaria";
+            btnCopiarDatosSecretaria.Size = new Size(183, 29);
+            btnCopiarDatosSecretaria.TabIndex = 21;
+            btnCopiarDatosSecretaria.Text = "Copiar Datos Secretaria";
+            btnCopiarDatosSecretaria.UseVisualStyleBackColor = true;
+            // 
+            // btnEliminarSecretariaSeleccionada
+            // 
+            btnEliminarSecretariaSeleccionada.Location = new Point(350, 19);
+            btnEliminarSecretariaSeleccionada.Name = "btnEliminarSecretariaSeleccionada";
+            btnEliminarSecretariaSeleccionada.Size = new Size(273, 29);
+            btnEliminarSecretariaSeleccionada.TabIndex = 20;
+            btnEliminarSecretariaSeleccionada.Text = "Eliminar Secretaria Seleccionada";
+            btnEliminarSecretariaSeleccionada.UseVisualStyleBackColor = true;
+            // 
+            // RefreshSecretarias
+            // 
+            RefreshSecretarias.Location = new Point(629, 19);
+            RefreshSecretarias.Name = "RefreshSecretarias";
+            RefreshSecretarias.Size = new Size(110, 29);
+            RefreshSecretarias.TabIndex = 19;
+            RefreshSecretarias.Text = "Refresh";
+            RefreshSecretarias.UseVisualStyleBackColor = true;
+            // 
+            // btnAgregarSecretaria
+            // 
+            btnAgregarSecretaria.Location = new Point(757, 161);
+            btnAgregarSecretaria.Name = "btnAgregarSecretaria";
+            btnAgregarSecretaria.Size = new Size(195, 29);
+            btnAgregarSecretaria.TabIndex = 10;
+            btnAgregarSecretaria.Text = "Agregar Secretaria";
+            btnAgregarSecretaria.UseVisualStyleBackColor = true;
+            // 
+            // txtAgregarSecretariaFechaDeNacimiento
+            // 
+            txtAgregarSecretariaFechaDeNacimiento.Location = new Point(896, 128);
+            txtAgregarSecretariaFechaDeNacimiento.Name = "txtAgregarSecretariaFechaDeNacimiento";
+            txtAgregarSecretariaFechaDeNacimiento.Size = new Size(56, 27);
+            txtAgregarSecretariaFechaDeNacimiento.TabIndex = 9;
+            // 
+            // txtAgregarSecretariaNacionalidad
+            // 
+            txtAgregarSecretariaNacionalidad.Location = new Point(861, 94);
+            txtAgregarSecretariaNacionalidad.Name = "txtAgregarSecretariaNacionalidad";
+            txtAgregarSecretariaNacionalidad.Size = new Size(91, 27);
+            txtAgregarSecretariaNacionalidad.TabIndex = 8;
+            // 
+            // txtAgregarSecretariaNombre
+            // 
+            txtAgregarSecretariaNombre.Location = new Point(827, 59);
+            txtAgregarSecretariaNombre.Name = "txtAgregarSecretariaNombre";
+            txtAgregarSecretariaNombre.Size = new Size(125, 27);
+            txtAgregarSecretariaNombre.TabIndex = 7;
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Location = new Point(757, 128);
+            label14.Name = "label14";
+            label14.Size = new Size(140, 20);
+            label14.TabIndex = 6;
+            label14.Text = "Año De Nacimiento";
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Location = new Point(757, 97);
+            label15.Name = "label15";
+            label15.Size = new Size(98, 20);
+            label15.TabIndex = 5;
+            label15.Text = "Nacionalidad";
+            // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.Location = new Point(757, 62);
+            label16.Name = "label16";
+            label16.Size = new Size(64, 20);
+            label16.TabIndex = 4;
+            label16.Text = "Nombre";
+            // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.Location = new Point(757, 23);
+            label17.Name = "label17";
+            label17.Size = new Size(133, 20);
+            label17.TabIndex = 3;
+            label17.Text = "Agregar Secretaria";
+            // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.Location = new Point(17, 23);
+            label18.Name = "label18";
+            label18.Size = new Size(136, 20);
+            label18.TabIndex = 2;
+            label18.Text = "Lista de Secretarias";
+            // 
+            // dgvSecretarias
+            // 
+            dgvSecretarias.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvSecretarias.Location = new Point(17, 51);
+            dgvSecretarias.Name = "dgvSecretarias";
+            dgvSecretarias.RowHeadersWidth = 51;
+            dgvSecretarias.Size = new Size(722, 353);
+            dgvSecretarias.TabIndex = 1;
+            // 
+            // txtModificarSecretariaNacionalidad
+            // 
+            txtModificarSecretariaNacionalidad.Location = new Point(861, 291);
+            txtModificarSecretariaNacionalidad.Name = "txtModificarSecretariaNacionalidad";
+            txtModificarSecretariaNacionalidad.Size = new Size(91, 27);
+            txtModificarSecretariaNacionalidad.TabIndex = 28;
+            // 
+            // txtModificarSecretariaNacimiento
+            // 
+            txtModificarSecretariaNacimiento.Location = new Point(896, 322);
+            txtModificarSecretariaNacimiento.Name = "txtModificarSecretariaNacimiento";
+            txtModificarSecretariaNacimiento.Size = new Size(56, 27);
+            txtModificarSecretariaNacimiento.TabIndex = 29;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(994, 495);
+            ClientSize = new Size(1124, 875);
+            Controls.Add(groupBox1);
             Controls.Add(btnSalir);
             Controls.Add(gbxEmpleados);
             Name = "Form1";
             Text = "Form1";
+            Load += Form1_Load;
             gbxEmpleados.ResumeLayout(false);
             gbxEmpleados.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvEmpleados).EndInit();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvSecretarias).EndInit();
             ResumeLayout(false);
         }
 
@@ -319,5 +556,27 @@
         private Button btnRefresh;
         private Button btnSalir;
         private Button btnDatosEmpleado;
+        private GroupBox groupBox1;
+        private Button btnCopiarDatosSecretaria;
+        private Button btnEliminarSecretariaSeleccionada;
+        private Button RefreshSecretarias;
+        private Button btnAgregarSecretaria;
+        private TextBox txtAgregarSecretariaFechaDeNacimiento;
+        private TextBox txtAgregarSecretariaNacionalidad;
+        private TextBox txtAgregarSecretariaNombre;
+        private Label label14;
+        private Label label15;
+        private Label label16;
+        private Label label17;
+        private Label label18;
+        private DataGridView dgvSecretarias;
+        private Button btnModificarSecretaria;
+        private TextBox txtModificarSecretaria;
+        private Label label10;
+        private Label label11;
+        private Label label12;
+        private Label label13;
+        private TextBox txtModificarSecretariaNacimiento;
+        private TextBox txtModificarSecretariaNacionalidad;
     }
 }
